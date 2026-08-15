@@ -1,84 +1,48 @@
 @import "tailwindcss";
 
-/* --- Styles de base (titres, etc.) --- */
-@layer base {
-  h1 {
-    @apply lg:text-6xl md:text-5xl text-4xl font-bold;
-  }
-
-  h2 {
-    @apply md:text-4xl text-3xl font-bold;
-  }
-}
-
-/* --- Déclaration des variables de thème --- */
+/**
+ * Tokens de couleur du Centre Médical.
+ * Déclarés ici via @theme (Tailwind v4) : chaque --color-* génère
+ * automatiquement les classes bg-*, text-*, border-*, ring-*, shadow-*,
+ * placeholder-*, accent-*, etc. — avec les modificateurs d'opacité
+ * (ex. bg-primary/20) qui fonctionnent nativement.
+ *
+ * Pour changer la charte graphique de l'app, il suffit de modifier
+ * les valeurs hexadécimales ci-dessous : tout le reste suit.
+ */
 @theme {
-  --color-primary: #032078;
-  --color-primary-hover: #0734ba;
-  --color-secondary: #d1850a;
-  --color-tertiary:#d1850a;
+  /* Bleu — couleur de marque principale (navigation active, focus, liens) */
+  --color-primary: #1a5f7a;
+  --color-primary-hover: #134a60;
+  --color-primary-light: #e8f4f8;
+  --color-primary-border: #c5dde8;
 
-}
+  /* Teal — couleur d'action principale (CTA, boutons "teal") */
+  --color-teal: #f5279f;
+  --color-teal-hover: #21867a;
+  --color-teal-light: #e8f5f3;
+  --color-teal-subtle: #f0faf8;
 
-/* --- Utilitaires personnalisés --- */
-@layer utilities {
-  /* Tu dois utiliser la variable CSS ici */
-  .bg-primary {
-    background-color: var(--color-primary);
-   
-  }
-   .bg-primary:hover {
-    /* background-color: var(--color-primary-hover); */
-    
-  }
+  /* Neutres — texte, fonds, bordures */
+  --color-dark: #1a2332;
+  --color-muted: #6b7a8d;
+  --color-muted-light: #f0f2f5;
+  --color-faint: #b0bcc8;
+  --color-line: #dde3ea;
+  --color-surface: #f5f7fa;
+  --color-surface-hover: #f9fafb;
 
+  /* États sémantiques */
+  --color-success: #27ae60;
+  --color-success-light: #e8f5f0;
 
-  .bg-secondary{
-    background-color: var(--color-secondary);
-    
-  }
-  .text-primary {
-    
-    color: var(--color-primary);
-  }
-  .text-secondary{
-    color: var(--color-secondary);
-  }
-}
+  --color-danger: #c0392b;
+  --color-danger-light: #fdf2f2;
+  --color-danger-border: #f5c6c1;
 
-/* --- Composants personnalisés --- */
-@layer components {
-  .navItem {
-    @apply hover:text-blue-700;
-  }
+  --color-warning: #e67e22;
+  --color-warning-light: #fef3e8;
 
-  .button {
-    @apply border w-[90px] h-[40px] rounded-md cursor-pointer;
-    background-color: var(--color-primary);
-    color: white;
-   
-  }
-
-  .button:hover {
-   background-color: var(--color-primary-hover); 
-  }
-
-  .card-container {
-    @apply w-[360px] shadow-xl rounded-2xl bg-[#FAFAFA];
-  }
-  .td{
-    @apply px-6 py-3 text-sm text-gray-900 font-medium
-  }
-}
-
-/* --- Exemple d’override CSS “pur” --- */
-.button {
-  border: solid var(--color-primary) 1px;
-  padding: 2px 6px;
-}
-.button:hover {
-  background-color:var(--color-primary-hover);
-}
-.navItem:hover{
-  color: var(--color-primary-hover);
+  --color-purple: #8e44ad;
+  --color-purple-light: #f3e8f8;
 }
